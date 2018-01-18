@@ -2,6 +2,10 @@
 /public/storage
 /public/hot
 /storage/*.key
+<<<<<<< HEAD
+=======
+/vendor
+>>>>>>> 936195aec571dd72d2591d0a3ed02dac61507fe9
 /.idea
 Homestead.json
 Homestead.yaml
