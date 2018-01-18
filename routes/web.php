@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    session_start();
+    var_dump(session_id());
+//    return view('welcome');
 });
