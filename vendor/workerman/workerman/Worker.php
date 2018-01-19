@@ -671,9 +671,6 @@ class Worker
             return;
         }
         global $argv;
-        unset($argv[0]);
-        var_dump($argv);
-        $argv = array_values($argv);
         // Check argv;
         $start_file = $argv[0];
         $available_commands = array(
