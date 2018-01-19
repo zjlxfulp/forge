@@ -39,12 +39,29 @@ class Workerman extends Command
      */
     public function handle()
     {
-        $gateway = new Gateway("Websocket://0.0.0.0:8010");
-        $gateway->name = 'ChatGateway';
-        $gateway->count = 4;
-        $gateway->lanIp = '192.168.1.251';
-        $gateway->startPort = 2000;
-        $gateway->registerAddress = '192.168.1.251:1236';
+        $ws = new Worker("websocket://0.0.0.0:9011");
+
+        $ws->count = 4;
+
+        $ws->onConnect = function($connection)
+        {
+            echo "new connection\n";
+        };
+
+        $ws->onMessage = function($connection, $data)
+        {
+            echo $data."\n";
+
+            $connection->send('hello1');
+        };
+
+        $ws->onClose = function($connection)
+        {
+            echo "Connection closed\n";
+        };
+
+        // Run worker
         Worker::runAll();
+
     }
 }
