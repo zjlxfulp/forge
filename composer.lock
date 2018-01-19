@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "34c655eb2ec4c5a3efc318c459eff5c5",
-    "content-hash": "5e5a40e36aae96ea60bd373570e8231b",
+    "hash": "d25839507536c92e3c43d04e1f3a8b1e",
+    "content-hash": "4873150a031d3cb618911153e24bd921",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -2596,6 +2596,40 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "workerman/gateway-worker",
+            "version": "v3.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/GatewayWorker.git",
+                "reference": "4444c59da4b5cd68679172904a40b66e1338389c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/walkor/GatewayWorker/4444c59da4b5cd68679172904a40b66e1338389c.zip",
+                "reference": "4444c59da4b5cd68679172904a40b66e1338389c",
+                "shasum": ""
+            },
+            "require": {
+                "workerman/workerman": ">=3.1.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GatewayWorker\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "http://www.workerman.net",
+            "keywords": [
+                "communication",
+                "distributed"
+            ],
+            "time": "2017-06-26 14:49:54"
         },
         {
             "name": "workerman/workerman",
