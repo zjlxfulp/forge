@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use GatewayWorker\Gateway;
 use Illuminate\Console\Command;
+use Workerman\Worker;
 
 class Workerman extends Command
 {
@@ -11,7 +13,7 @@ class Workerman extends Command
      *
      * @var string
      */
-    protected $signature = 'workerman:serve {command}';
+    protected $signature = 'workerman:serve {com} {q=-d}';
 
     /**
      * The console command description.
@@ -37,6 +39,15 @@ class Workerman extends Command
      */
     public function handle()
     {
-        echo 123;
+        $gateway = new Gateway("Websocket://0.0.0.0:8010");
+        $gateway->name = 'ChatGateway';
+        $gateway->count = 4;
+        $gateway->lanIp = '192.168.1.251';
+        $gateway->startPort = 2000;
+        $gateway->registerAddress = '192.168.1.251:1236';
+        if(!defined('GLOBAL_START'))
+        {
+            Worker::runAll();
+        }
     }
 }
