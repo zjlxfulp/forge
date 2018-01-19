@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
     session_start();
+    var_dump(1);
     var_dump(session_id());
 //    return view('welcome');
 });
