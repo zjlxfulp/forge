@@ -674,6 +674,7 @@ class Worker
         unset($argv[0]);
         unset($argv[1]);
         $argv = array_values($argv);
+        var_dump($argv);
         // Check argv;
         $start_file = $argv[0];
         $available_commands = array(
