@@ -45,9 +45,6 @@ class Workerman extends Command
         $gateway->lanIp = '192.168.1.251';
         $gateway->startPort = 2000;
         $gateway->registerAddress = '192.168.1.251:1236';
-        if(!defined('GLOBAL_START'))
-        {
-            Worker::runAll();
-        }
+        Worker::runAll();
     }
 }
