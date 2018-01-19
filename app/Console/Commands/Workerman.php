@@ -39,29 +39,7 @@ class Workerman extends Command
      */
     public function handle()
     {
-        $ws = new Worker("websocket://0.0.0.0:9011");
-
-        $ws->count = 4;
-
-        $ws->onConnect = function($connection)
-        {
-            echo "new connection\n";
-        };
-
-        $ws->onMessage = function($connection, $data)
-        {
-            echo $data."\n";
-
-            $connection->send('hello1');
-        };
-
-        $ws->onClose = function($connection)
-        {
-            echo "Connection closed\n";
-        };
-
-        // Run worker
-        Worker::runAll();
+        var_dump($argv);
 
     }
 }
